@@ -59,7 +59,7 @@ const GetTime=()=>{
     let hour=Date_obj.getHours();
     let minute=Date_obj.getMinutes();
     let second=Date_obj.getSeconds();
-    Time.innerText=Time.innerText = `${hour % 12 || 12}:${minute}:${second} ${hour >= 12 ? "pm" : "am"}`;;
+    Time.innerText=Time.innerText = `${hour % 12 || 12}:${minute}:${second} ${hour >= 12 ? "pm" : "am"}`;
 }
 
 setInterval(GetTime,1000);
