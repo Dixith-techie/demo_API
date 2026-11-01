@@ -1,0 +1,144 @@
+{
+    "products": [
+    {
+      "id": 101,
+      "name": "Wireless Mouse",
+      "category": "Electronics",
+      "price": 29.99,
+      "stock": 120
+    },
+    {
+      "id": 102,
+      "name": "Mechanical Keyboard",
+      "category": "Electronics",
+      "price": 89.99,
+      "stock": 75
+    },
+    {
+      "id": 103,
+      "name": "USB-C Hub",
+      "category": "Accessories",
+      "price": 39.99,
+      "stock": 200
+    },
+    {
+      "id": 104,
+      "name": "Laptop Stand",
+      "category": "Office",
+      "price": 24.99,
+      "stock": 90
+    },
+    {
+      "id": 105,
+      "name": "Bluetooth Speaker",
+      "category": "Audio",
+      "price": 59.99,
+      "stock": 65
+    },
+    {
+      "id": 106,
+      "name": "Smart Watch",
+      "category": "Wearables",
+      "price": 199.99,
+      "stock": 45
+    },
+    {
+      "id": 107,
+      "name": "Gaming Headset",
+      "category": "Gaming",
+      "price": 79.99,
+      "stock": 80
+    },
+    {
+      "id": 108,
+      "name": "Webcam HD",
+      "category": "Electronics",
+      "price": 49.99,
+      "stock": 50
+    },
+    {
+      "id": 109,
+      "name": "Portable SSD",
+      "category": "Storage",
+      "price": 129.99,
+      "stock": 70
+    },
+    {
+      "id": 110,
+      "name": "Monitor 27 Inch",
+      "category": "Electronics",
+      "price": 249.99,
+      "stock": 30
+    },
+    {
+      "id": 111,
+      "name": "Office Chair",
+      "category": "Furniture",
+      "price": 179.99,
+      "stock": 25
+    },
+    {
+      "id": 112,
+      "name": "Desk Lamp",
+      "category": "Home",
+      "price": 34.99,
+      "stock": 100
+    },
+    {
+      "id": 113,
+      "name": "External Hard Drive",
+      "category": "Storage",
+      "price": 89.99,
+      "stock": 60
+    },
+    {
+      "id": 114,
+      "name": "Wireless Charger",
+      "category": "Accessories",
+      "price": 19.99,
+      "stock": 140
+    },
+    {
+      "id": 115,
+      "name": "Fitness Tracker",
+      "category": "Wearables",
+      "price": 69.99,
+      "stock": 55
+    },
+    {
+      "id": 116,
+      "name": "Tablet 10 Inch",
+      "category": "Electronics",
+      "price": 299.99,
+      "stock": 40
+    },
+    {
+      "id": 117,
+      "name": "Power Bank",
+      "category": "Accessories",
+      "price": 44.99,
+      "stock": 110
+    },
+    {
+      "id": 118,
+      "name": "Router WiFi 6",
+      "category": "Networking",
+      "price": 149.99,
+      "stock": 35
+    },
+    {
+      "id": 119,
+      "name": "Graphics Tablet",
+      "category": "Creative",
+      "price": 99.99,
+      "stock": 20
+    },
+    {
+      "id": 120,
+      "name": "Noise Cancelling Earbuds",
+      "category": "Audio",
+      "price": 159.99,
+      "stock": 85
+    }
+  ]
+}

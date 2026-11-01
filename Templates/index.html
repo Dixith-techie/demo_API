@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express backend</title>
+<style>
+#Time-Box{
+ height:200px;
+ width:400px;
+ background-color: gold;
+ color:red;
+ margin:auto;
+ border:3px solid black;
+ border-radius:15px;
+box-shadow:10px 10px 10px grey;
+}
+
+#date{
+font-size:35px;
+text-align:center;
+}
+
+#time{
+font-size:50px;
+text-align:center;
+margin:auto;
+}
+
+#H1{
+background-color: cyan;
+color:orange;
+text-align: center;
+
+}
+
+#H2{
+    background-color: cyan;
+color:brown;
+text-align: center;
+
+}
+</style>
+</head>
+<body>
+    <h1 id="H1">Welcome to the Express Backend Api!</h1>
+    <h1 id="H2">This is the root page!</h1>
+    <div id="Time-Box"><div id="date">0:0:0</div><div id="time">0:0:0:am</div></div>
+<script>
+let Date_obj=new Date();
+let date=document.getElementById('date');
+let Time=document.getElementById('time');
+let Day={0:"Sunday",1:"Monday",2:"Tuesday",3:"Wednesday",4:"Thursday",5:"Friday",6:"Saturday"};
+
+date.innerText=`${Date_obj.getDate()}/${Date_obj.getMonth()+1}/${Date_obj.getFullYear()} ${Day[Date_obj.getDay()]}`;
+
+const GetTime=()=>{
+    let Date_obj=new Date();
+    let hour=Date_obj.getHours();
+    let minute=Date_obj.getMinutes();
+    let second=Date_obj.getSeconds();
+    Time.innerText=Time.innerText = `${hour % 12 || 12}:${minute}:${second} ${hour >= 12 ? "pm" : "am"}`;;
+}
+
+setInterval(GetTime,1000);
+
+</script>
+</body>
+</html>
