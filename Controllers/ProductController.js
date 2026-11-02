@@ -1,56 +1,105 @@
-const ProductsDB=require("../DB/Products.json")
-const Products=ProductsDB.products;
+const Product = require("../Models/productSchema");
 
-const getProducts=(req,res)=>{
-const sortBy=req.query.sortBy;
-const sort=Number(req.query.sort);
+// GET /products
+exports.getProducts = async (req, res, next) => {
+    try {
+        const products = await Product.find();
 
-let sortedProduct=[...Products];
-
-if(sortBy==="price"){
-    if(sort===1){
-        sortedProduct.sort((prev,next)=>{
-        return prev.price-next.price
-    
-    })
-}
-    else{
-        sortedProduct.sort((prev,next)=>{
-        return next.price-prev.price
-    })
+        res.status(200).json({
+            success: true,
+            count: products.length,
+            data: products
+        });
+    } catch (error) {
+        next(error);
     }
-}
-else if(sortBy==="stock"){
-    if(sort===1){
-        sortedProduct.sort((prev,next)=>{
-        return prev.stock-next.stock
-    })
+};
+
+// GET /products/:id
+exports.getProduct = async (req, res, next) => {
+    try {
+        const product = await Product.findById(req.params.id);
+
+        if (!product) {
+            return res.status(404).json({
+                success: false,
+                message: "Product not found"
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            data: product
+        });
+    } catch (error) {
+        next(error);
     }
-    else{
-        sortedProduct.sort((prev,next)=>{
-        return next.stock-prev.stock
-    })
+};
+
+// POST /products
+exports.postProduct = async (req, res, next) => {
+    try {
+        const product = await Product.create(req.body);
+
+        res.status(201).json({
+            success: true,
+            message: "Product created successfully",
+            data: product
+        });
+    } catch (error) {
+        next(error);
     }
-}
+};
 
-res.status(200).json({"success":true,"data":sortedProduct})
-}
+// PUT /products/:id
+exports.putProduct = async (req, res, next) => {
+    try {
+        const product = await Product.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            {
+                new: true,
+                runValidators: true
+            }
+        );
 
-const getProduct=(req,res)=>{
-const Id=Number(req.params.id);
+        if (!product) {
+            return res.status(404).json({
+                success: false,
+                message: "Product not found"
+            });
+        }
 
-let product=Products.find((val,ind)=>{
-    return val.id===Id
-})
+        res.status(200).json({
+            success: true,
+            message: "Product updated successfully",
+            data: product
+        });
+    } catch (error) {
+        next(error);
+    }
+};
 
-if(product){
-    res.status(200).json({"success":true,
-    "data":product})
-}
-else{
-    res.status(404).json({"success":false,
-        "message":"Item not found!"})
-}
-}
+// DELETE /products/:id
+exports.deleteProduct = async (req, res, next) => {
+    try {
+        const product = await Product.findByIdAndDelete(req.params.id);
 
-module.exports={getProducts,getProduct}
+        if (!product) {
+            return res.status(404).json({
+                success: false,
+                message: "Product not found"
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "Product deleted successfully",
+            data: product
+        });
+    } catch (error) {
+        next(error);
+    }
+};
+
+
